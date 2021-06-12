@@ -7,10 +7,6 @@ class Application {
      */
     static function Main() {
         $doc = new Document();
-
-        //$select = new CountrySelect();
-        //$doc->body->add($select);
-
         $doc->html();
     }
 

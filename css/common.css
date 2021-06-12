@@ -54,3 +54,15 @@ h2 {
 p {
     color: #06081d;
 }
+
+select {
+    border: 1px solid #d6d6d6;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    outline: none;
+}
+
+select:hover {
+    color: #808080;
+}
