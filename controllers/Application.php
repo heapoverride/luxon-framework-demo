@@ -1,5 +1,7 @@
 <?php
 
+use Html\Paragraph;
+
 class Application {
 
     /**
@@ -11,10 +13,13 @@ class Application {
         $doc->main->add(
             (new Html\H2())->add("Welcome to Luxon demo site"),
             (new Html\Paragraph())->add(
-                (new Html\Span())
-                    ->add("This \"very simple\" website is powered by "),
-                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework"))
-                    ->add("Luxon Framework")
+                "This \"very simple\" website is powered by ",
+                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework"))->add("Luxon Framework"), 
+                ".", (new Html\LineBreak())->repeat(2),
+
+                "You can read this demo site's code on ",
+                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework-demo"))->add("GitHub"),
+                "!"
             )
         );
 
@@ -42,11 +47,12 @@ class Application {
         $doc = new Document();
         $doc->title = "Test 123";
 
-        $el = new Html\Span();
-        $el->setBefore((new Html\Span())->add("This is a test"));
-
         $doc->main->add(
-            $el
+            new CountrySelect(),
+            (new Paragraph())->add(
+                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/partials/CountrySelect.php"))
+                    ->add("CountrySelect.php")
+            )
         );
 
         $doc->html();
