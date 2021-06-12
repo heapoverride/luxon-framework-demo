@@ -3,6 +3,7 @@
 class Document extends Html\Html {
     public $head;
     public $body;
+    public $main;
 
     function __construct()
     {
@@ -14,16 +15,21 @@ class Document extends Html\Html {
                 new Html\Style("/css/common.css")
             );
 
+        $main = new Html\Main();
         $body = (new Html\Body())
             ->add(
                 (new Html\Header())
                     ->add(
                         (new Html\H1())->add("Luxon demo")
                     ),
-                (new Html\Main())
+                (new Html\Nav())
                     ->add(
-                        Article::getArticles()
+                        (new Html\Hyperlink("/"))->add("Home"),
+                        (new Html\Hyperlink("/news/"))->add("News"),
+                        (new Html\Hyperlink("#"))->add("Wiki"),
+                        (new Html\Hyperlink("#"))->add("Contact")
                     ),
+                $main,
                 (new Html\Footer())
                     ->add("Luxon Framework ❤")
             );
@@ -33,5 +39,6 @@ class Document extends Html\Html {
         
         $this->head = $head;
         $this->body = $body;
+        $this->main = $main;
     }
 }

@@ -11,7 +11,7 @@ class Article {
     static function getArticles() {
         $articles = [];
 
-        $result = \Database::query("SELECT * FROM articles");
+        $result = \Database::query("SELECT * FROM articles ORDER BY time DESC");
 
         while ($row = $result->fetch()) {
             $article = new Article();

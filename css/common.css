@@ -18,6 +18,25 @@ header {
     text-align: center;
 }
 
+nav {
+    background: #fff;
+}
+
+nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+nav a:hover {
+    background: #f2f2f2;
+}
+
+nav a.active {
+    background: #e3e2df;
+}
+
 main {
     margin: 20px 10%;
     box-sizing: border-box;
@@ -36,7 +55,7 @@ footer {
 article {
     background: #fff;
     padding: 10px 20px;
-    margin: 4px 2px;
+    margin: 8px 2px;
 }
 
 article h2 {
