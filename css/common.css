@@ -10,6 +10,17 @@ body {
     min-height: 100vh;
 }
 
+a {
+    color: #1a2388;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+a:hover {
+    color: #4050ff;
+}
+
 header {
     background: #4050ff;
     box-sizing: border-box;
