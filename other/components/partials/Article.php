@@ -5,6 +5,10 @@ class Article extends Html\Article {
     {
         parent::__construct();
 
+        // ????
+        $body = htmlspecialchars($body);
+        $body = new Markdown($body);
+
         $this->add(
             (new Html\H2())->add($title),
             (new Html\Time())->add(date("M j, Y", $time)),
