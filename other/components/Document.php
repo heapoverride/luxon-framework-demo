@@ -11,44 +11,33 @@ class Document extends Html\Html {
     {
         parent::__construct();
 
-        $titleText = new Html\TextRef($this->title);
+        $this->add(
+            ($head = new Html\Head())->add(
+                ($title = new Html\Title())
+            ),
+            ($body = new Html\Body())->add(
+                ($header = new Html\Header()),
+                ($nav = new Html\Nav()),
+                ($main = new Html\Main()),
+                ($footer = new Html\Footer())
+            )
+        );
 
-        /* head */
-        $head = (new Html\Head())
-            ->add(
-                new Html\Title($titleText),
-                new Html\Style("/css/common.css")
-            );
-
-        /* body */
-        $body = new Html\Body();
-
-            /* header */
-            $header = (new Html\Header())->add(
-                (new Html\H1())->add($titleText)
-            );
-            $body->add($header);
-
-            /* nav */
-            $nav = (new Html\Nav())->add(
-                (new Html\Hyperlink("/"))->add("Home"),
-                (new Html\Hyperlink("/news/"))->add("News"),
-                (new Html\Hyperlink("#"))->add("Wiki"),
-                (new Html\Hyperlink("#"))->add("Contact"),
-                (new Html\Hyperlink("/test/"))->add("Test")
-            );
-            $body->add($nav);
-            
-            /* main */
-            $main = new Html\Main();
-            $body->add($main);
-
-            /* footer */
-            $footer = (new Html\Footer())->add("Luxon Framework ❤");
-            $body->add($footer);
-
-        $this->add($head);
-        $this->add($body);
+        $head->add(new Html\Style("/css/common.css"));
+        $title->add(new Html\TextRef($this->title));
+        $nav->add(
+            (new Html\Hyperlink("/"))->add("Home"),
+            (new Html\Hyperlink("/news/"))->add("News"),
+            (new Html\Hyperlink("#"))->add("Wiki"),
+            (new Html\Hyperlink("#"))->add("Contact"),
+            (new Html\Hyperlink("/test/"))->add("Test")
+        );
+        $header->add(
+            (new Html\H1())->add(
+                new Html\TextRef($this->title)
+            )
+        );
+        $footer->add("Luxon Framework ❤");
         
         $this->head = $head;
         $this->body = $body;
