@@ -26,11 +26,11 @@ class Document extends Html\Html {
         $head->add(new Html\Style("/css/common.css"));
         $title->add(new Html\TextRef($this->title));
         $nav->add(
-            (new Html\Hyperlink("/"))->add("Home"),
-            (new Html\Hyperlink("/news/"))->add("News"),
-            (new Html\Hyperlink("#"))->add("Wiki"),
-            (new Html\Hyperlink("#"))->add("Contact"),
-            (new Html\Hyperlink("/test/"))->add("Test")
+            (new Html\Hyperlink("Home",    "/")),
+            (new Html\Hyperlink("News",    "/news/")),
+            (new Html\Hyperlink("Wiki",    "#")),
+            (new Html\Hyperlink("Contact", "#")),
+            (new Html\Hyperlink("Test",    "/test/"))
         );
         $header->add(
             (new Html\H1())->add(

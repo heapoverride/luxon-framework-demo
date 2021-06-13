@@ -14,11 +14,11 @@ class Application {
             (new Html\H2())->add("Welcome to Luxon demo site"),
             (new Html\Paragraph())->add(
                 "This \"very simple\" website is powered by ",
-                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework"))->add("Luxon Framework"), 
+                (new Html\Hyperlink("Luxon Framework", "https://github.com/UnrealSecurity/luxon-framework")), 
                 ".", (new Html\LineBreak())->repeat(2),
 
                 "You can read this demo site's code on ",
-                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework-demo"))->add("GitHub"),
+                (new Html\Hyperlink("GitHub", "https://github.com/UnrealSecurity/luxon-framework-demo")),
                 "!"
             )
         );
@@ -122,8 +122,7 @@ class Application {
         $doc->main->add(
             new CountrySelect(),
             (new Paragraph())->add(
-                (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/partials/CountrySelect.php"))
-                    ->add("CountrySelect.php"),
+                (new Html\Hyperlink("CountrySelect.php", "https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/partials/CountrySelect.php")),
                 Markdown::fromFile("static/md/example.md")
             )
         );
