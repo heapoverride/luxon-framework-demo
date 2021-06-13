@@ -94,8 +94,8 @@ class Application {
      * Handle new article submission
      */
     static function NewsAdminPost() {
-        $title = $_POST['title'];
-        $body = $_POST['body'];
+        $title = $_POST["title"];
+        $body = $_POST["body"];
 
         $result = ORM::instance()
             ->insert("articles", [
