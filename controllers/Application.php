@@ -51,7 +51,8 @@ class Application {
             new CountrySelect(),
             (new Paragraph())->add(
                 (new Html\Hyperlink("https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/partials/CountrySelect.php"))
-                    ->add("CountrySelect.php")
+                    ->add("CountrySelect.php"),
+                Markdown::fromFile("static/md/example.md")
             )
         );
 
