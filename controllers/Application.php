@@ -11,11 +11,13 @@ class Application {
         $doc = new Document();
 
         $doc->main->add(
-            (new Html\H2())->add("Welcome to Luxon demo site"),
+            new Html\H2("Welcome to Luxon demo site"),
             (new Html\Paragraph())->add(
                 "This \"very simple\" website is powered by ",
                 (new Html\Hyperlink("Luxon Framework", "https://github.com/UnrealSecurity/luxon-framework")), 
-                ".", (new Html\LineBreak())->repeat(2),
+                ".", 
+                
+                (new Html\LineBreak())->repeat(2),
 
                 "You can read this demo site's code on ",
                 (new Html\Hyperlink("GitHub", "https://github.com/UnrealSecurity/luxon-framework-demo")),
