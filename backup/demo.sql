@@ -23,9 +23,9 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `body` mediumtext DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table demo.articles: ~0 rows (approximately)
+-- Dumping data for table demo.articles: ~21 rows (approximately)
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
 INSERT INTO `articles` (`id`, `title`, `body`, `time`) VALUES
 	(1, 'Let\'s speak Latin', 'Lorem ipsum dolor sit amet...', 1623499025),
@@ -33,7 +33,22 @@ INSERT INTO `articles` (`id`, `title`, `body`, `time`) VALUES
 	(3, 'U.S. Authorities Shut Down Slilpp—Largest Marketplace for Stolen Logins', 'The U.S. Department of Justice (DoJ) Thursday said it disrupted and took down the infrastructure of an underground marketplace known as "Slilpp" that specialized in trading stolen login credentials as part of an international law enforcement operation.\r\n\r\nOver a dozen individuals have been charged or arrested in connection with the illegal marketplace. The cyber crackdown, which involved the joint efforts of the U.S., Germany, the Netherlands, and Romania, also commandeered a set of servers hosting its infrastructure as well as the multiple domains the group operated.', 1623521362),
 	(4, 'New Cyber Espionage Group Targeting Ministries of Foreign Affairs', 'Cybersecurity researchers on Thursday took the wraps off a new cyberespionage group that has been behind a series of targeted attacks against diplomatic entities and telecommunication companies in Africa and the Middle East since at least 2017.', 1623522662),
 	(7, 'News admin interface', 'I\'ve added a new (super secret) news admin interface that allows adding these articles with few clicks!', 1623600675),
-	(8, 'Test', '<script>alert("vulnerable")</script>', 1623600837);
+	(8, 'Test', '<script>alert("vulnerable")</script>', 1623600837),
+	(9, 'This article should stay here', 'Imagine if this article wasn\'t here.\r\nYeah, you cannot delete it. It\'s impossible', 1623603756),
+	(10, '<script>alert("vulnerable")</script>', 'That\'d be funny if it worked', 1623603882),
+	(11, 'One more try', '<IMG SRC=/ onerror="alert(String.fromCharCode(88,83,83))"></img>', 1623604768),
+	(12, 'Graphene is one of the best hackers ever ', 'Well.. Holy shit', 1623607785),
+	(13, 'NVIDIA is dropping support for Windows 7 and Windows 8 drivers', 'NVIDIA is dropping support for Windows 7, Windows 8, and Windows 8.1 drivers starting in October. 2021, as they focus on supporting Windows 10 and later versions of Windows.', 1623607907),
+	(15, 'Markdown 😊', '## Markdown!\r\nWhere?\r\n\r\n![cute cat animated gif](https://media1.tenor.com/images/859b00123f71e2772a87b9b79899c74d/tenor.gif)', 1623608470),
+	(16, 'Interpol shuts down thousands of fake online pharmacies', 'The Interpol (International Criminal Police Organisation) has taken down thousands of online marketplaces that posed as pharmacies and pushed dangerous fake and illicit drugs and medicine.', 1623608491),
+	(17, ' Microsoft\'s next generation of Windows — What we know so far', 'Microsoft will soon reveal their next generation of Windows at an upcoming press event later this month. Here is what we know so far about Microsoft\'s new version of Windows.', 1623608499),
+	(18, ' Audi, Volkswagen data breach affects 3.3 million customers', 'Audi and Volkswagen have suffered a data breach affecting 3.3 million customers after a vendor exposed unsecured data on the Internet.', 1623608512),
+	(19, ' Intuit notifies customers of hacked TurboTax accounts', 'Financial software company Intuit has notified TurboTax customers that some of their personal and financial information was accessed by attackers following what looks like a series of account takeover attacks.', 1623608521),
+	(20, ' Microsoft pushes Windows 10 KB4023057 again to fix update issues', 'Microsoft is rolling out the KB4023057 update again to all versions of Windows 10 to ensure that devices can successfully install new updates as they are released.', 1623608528),
+	(21, 'Codecov ditches Bash Uploader for a NodeJS executable', 'Codecov has now introduced a new cross-platform uploader meant to replace its former Bash Uploader. The new uploader is available as a static binary executable currently supporting the Windows, Linux, and macOS operating systems. However, some have raised concerns with the new uploader and the many dependencies it contains.', 1623608538),
+	(22, ' The Week in Ransomware - June 11th 2021 - Under Pressure', 'It has been quite the week when it comes to ransomware, with ransoms being paid, ransoms being taken back, and a ransomware gang shutting down.', 1623608545),
+	(23, ' Friday gift: Microsoft Teams bug puts calls directly in voicemail', 'A Microsoft Teams change is causing calls to go directly to voicemail, much to users\' happiness worldwide.', 1623608554),
+	(24, 'Hello!', 'Krunch was here lol', 1623633365);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
