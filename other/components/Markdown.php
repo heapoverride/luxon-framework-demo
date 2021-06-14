@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * A dirty hack to add Markdown support to HTML renderer
+ * with custom component
+ */
+
 class Markdown extends Html\Element {
     public $md;
 
