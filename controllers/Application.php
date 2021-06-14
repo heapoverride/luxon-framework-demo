@@ -1,7 +1,5 @@
 <?php
 
-use Html\Paragraph;
-
 class Application {
 
     /**
@@ -123,7 +121,7 @@ class Application {
 
         $doc->main->add(
             new CountrySelect(),
-            (new Paragraph())->add(
+            (new Html\Paragraph())->add(
                 (new Html\Hyperlink("CountrySelect.php", "https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/partials/CountrySelect.php")),
                 Markdown::fromFile("static/md/example.md")
             )
