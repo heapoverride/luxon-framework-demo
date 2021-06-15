@@ -120,7 +120,16 @@ class Application {
         $doc = new Document();
         $doc->title = "Test 123";
 
+        $multiline = new MultilineText([
+            "Normal",
+            new Html\B("Bold"),
+            new Html\I("Italic"),
+            new Html\U("Underline"),
+            (new Html\Hyperlink("MultilineText.php", "https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/MultilineText.php"))
+        ]);
+
         $doc->main->add(
+            $multiline,
             new CountrySelect(),
             (new Html\Paragraph())->add(
                 (new Html\Hyperlink("CountrySelect.php", "https://github.com/UnrealSecurity/luxon-framework-demo/blob/main/other/components/partials/CountrySelect.php")),
