@@ -23,7 +23,7 @@ class Application {
                 "!"
             ),
 
-            new Html\H2("List of cool people:"),
+            new Html\H2("List of cool people"),
             new CoolPeopleList()
         );
 
