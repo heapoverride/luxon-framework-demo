@@ -10,6 +10,7 @@ class Application {
 
         $doc->main->add(
             new Html\H2("Welcome to Luxon demo site"),
+
             (new Html\Paragraph())->add(
                 "This \"very simple\" website is powered by ",
                 (new Html\Hyperlink("Luxon Framework", "https://github.com/UnrealSecurity/luxon-framework")), 
@@ -20,10 +21,13 @@ class Application {
                 "You can read this demo site's code on ",
                 (new Html\Hyperlink("GitHub", "https://github.com/UnrealSecurity/luxon-framework-demo")),
                 "!"
-            )
+            ),
+
+            new Html\H2("List of cool people:"),
+            new CoolPeopleList()
         );
 
-        $doc->html();
+        print($doc);
     }
 
     /**
@@ -37,7 +41,7 @@ class Application {
             Article::getArticles()
         );
 
-        $doc->html();
+        print($doc);
     }
 
     /**
@@ -87,7 +91,7 @@ class Application {
         $formContainer->set("class", "form-container");
         $form->set("method", "post");
 
-        $doc->html();
+        print($doc);
     }
 
     /**
@@ -127,7 +131,7 @@ class Application {
             )
         );
 
-        $doc->html();
+        print($doc);
     }
 
 }

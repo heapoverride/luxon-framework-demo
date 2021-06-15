@@ -138,3 +138,11 @@ select:hover {
 .form-container input[type="submit"]:hover {
     background: #3644d8;
 }
+
+ul {
+    list-style-type: square;
+}
+
+ul li {
+    padding: 7px;
+}
