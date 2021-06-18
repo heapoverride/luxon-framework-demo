@@ -8,7 +8,6 @@ class Application {
     static function Home() {
         $doc = new Document();
 
-        $nl = new Html\LineBreak();
         $luxonGithubLink = new Html\Hyperlink("Luxon Framework", "https://github.com/UnrealSecurity/luxon-framework");
         $luxonDemoGithubLink = new Html\Hyperlink("GitHub", "https://github.com/UnrealSecurity/luxon-framework-demo");
 
