@@ -13,7 +13,7 @@ class Document extends Html\Html {
 
         $this->add(
             ($head = new Html\Head())->add(
-                ($title = new Html\Title())
+                ($title = new Html\Title(""))
             ),
             ($body = new Html\Body())->add(
                 ($header = new Html\Header()),
