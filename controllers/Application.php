@@ -14,12 +14,10 @@ class Application {
 
         $doc->main->add(
             new Html\H2("Welcome to Luxon demo site"),
-
-            (new Html\Paragraph())->add(
-                "This \"very simple\" website is powered by ", $luxonGithubLink, ".", $nl->repeat(2),
-                "You can read this demo site's code on ", $luxonDemoGithubLink, "!"
-            ),
-
+            new MultilineText([
+                ["This \"very simple\" website is powered by ", $luxonGithubLink, "."],
+                ["You can read this demo site's code on ", $luxonDemoGithubLink, "!"]
+            ]),
             new Html\H2("List of cool people"),
             new CoolPeopleList()
         );

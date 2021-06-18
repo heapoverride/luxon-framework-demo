@@ -6,7 +6,8 @@ class CoolPeopleList extends Html\UnorderedList {
         parent::__construct();
 
         $list = [
-            "HeapOverride"
+            "HeapOverride",
+            "4rlenrey"
         ];
 
         foreach ($list as $text) {
