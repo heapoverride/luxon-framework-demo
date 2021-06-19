@@ -23,9 +23,9 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `body` mediumtext DEFAULT NULL,
   `time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table demo.articles: ~21 rows (approximately)
+-- Dumping data for table demo.articles: ~32 rows (approximately)
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
 INSERT INTO `articles` (`id`, `title`, `body`, `time`) VALUES
 	(1, 'Let\'s speak Latin', 'Lorem ipsum dolor sit amet...', 1623499025),
@@ -48,8 +48,42 @@ INSERT INTO `articles` (`id`, `title`, `body`, `time`) VALUES
 	(21, 'Codecov ditches Bash Uploader for a NodeJS executable', 'Codecov has now introduced a new cross-platform uploader meant to replace its former Bash Uploader. The new uploader is available as a static binary executable currently supporting the Windows, Linux, and macOS operating systems. However, some have raised concerns with the new uploader and the many dependencies it contains.', 1623608538),
 	(22, ' The Week in Ransomware - June 11th 2021 - Under Pressure', 'It has been quite the week when it comes to ransomware, with ransoms being paid, ransoms being taken back, and a ransomware gang shutting down.', 1623608545),
 	(23, ' Friday gift: Microsoft Teams bug puts calls directly in voicemail', 'A Microsoft Teams change is causing calls to go directly to voicemail, much to users\' happiness worldwide.', 1623608554),
-	(24, 'Hello!', 'Krunch was here lol', 1623633365);
+	(24, 'Hello!', 'Krunch was here lol', 1623633365),
+	(25, 'Oh Heyyyy ', 'Tyl3rDurd3n found it :D', 1623670565),
+	(28, 'This guy is a bad journalist', '![Bad journalist](https://i.postimg.cc/PxR9qYDk/4rlenrey.png)', 1623682080),
+	(30, 'HELLO', 'ahh', 1623499025),
+	(31, 'HELLO', 'ahh', 0),
+	(44, 'Let\'s speak Latin', 'Lorem ipsum dolor sit amet...', 1623499025),
+	(45, 'Testing', 'Testing 1 2 3...', 1623683981),
+	(99, 'dexter', 'love you Heap <3', 1623684135),
+	(100, 'The Maligator', 'That took me way too long.', 1623693677),
+	(101, 'Test', '[cute cat animated gif](https://media1.tenor.com/images/859b00123f71e2772a87b9b79899c74d/tenor.gif', 1623774545),
+	(103, 'Notice me', '![Bad journalist](https://i.postimg.cc/PxR9qYDk/4rlenrey.png) 👉👈 Hey, wanna play some chess? ', 1623781430),
+	(104, 'awd', 'awd', 1623974774);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
+
+-- Dumping structure for table demo.photos
+CREATE TABLE IF NOT EXISTS `photos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `photo_url` varchar(180) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table demo.photos: ~0 rows (approximately)
+/*!40000 ALTER TABLE `photos` DISABLE KEYS */;
+INSERT INTO `photos` (`id`, `photo_url`, `description`) VALUES
+	(1, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(2, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(3, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(4, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(5, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(6, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(7, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(8, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(9, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"'),
+	(10, '/uploads/images/mr_robot.png', 'This is Rami Malek aka "Mr. Robot"');
+/*!40000 ALTER TABLE `photos` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
