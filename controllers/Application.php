@@ -115,7 +115,7 @@ class Application {
      */
     static function Test() {
         $doc = new Document();
-        $doc->title = "Test 123";
+        $doc->title = "Test page";
 
         $multiline = new MultilineText([
             "Normal",
@@ -133,6 +133,27 @@ class Application {
                 Markdown::fromFile("static/md/example.md")
             )
         );
+
+        print($doc);
+    }
+
+    /**
+     * Render the photos page
+     */
+    static function Photos() {
+        $doc = new Document();
+        $doc->title = "Photo gallery";
+
+        $outer_container = (new Html\Div())
+            ->set("class", "photos-outer-container");
+
+        $inner_container = (new Html\Div())
+            ->set("class", "photos-inner-container")
+            ->add(Photo::getPhotos());
+        
+        $outer_container->add($inner_container);
+
+        $doc->main->add($outer_container);
 
         print($doc);
     }

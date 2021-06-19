@@ -30,6 +30,7 @@ class Document extends Html\Html {
             (new Html\Hyperlink("News",    "/news/")),
             (new Html\Hyperlink("Wiki",    "#")),
             (new Html\Hyperlink("Contact", "#")),
+            (new Html\Hyperlink("Photos",  "/photos/")),
             (new Html\Hyperlink("Test",    "/test/"))
         );
         $header->add(
