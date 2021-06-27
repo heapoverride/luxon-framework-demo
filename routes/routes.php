@@ -10,6 +10,6 @@ Router::route("GET", "/^\/test\/?$/", ['Application', 'Test']);
 Router::route("GET", "/^\/photos\/?$/", ['Application', 'Photos']);
 
 Router::route("GET", "/^\/login\/?$/", ['Application', 'Login']);
-Router::route("GET", "/^\/register\/?$/", ['Application', 'Register']);
 Router::route("POST", "/^\/login\/?$/", ['Application', 'LoginPost']);
+Router::route("GET", "/^\/register\/?$/", ['Application', 'Register']);
 Router::route("POST", "/^\/register\/?$/", ['Application', 'RegisterPost']);

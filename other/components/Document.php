@@ -25,6 +25,7 @@ class Document extends Html\Html {
 
         $head->add(new Html\Style("/css/common.css"));
         $title->add(new Html\TextRef($this->title));
+
         $nav->add(
             (new Html\Hyperlink("Home",    "/")),
             (new Html\Hyperlink("News",    "/news/")),
@@ -33,6 +34,16 @@ class Document extends Html\Html {
             (new Html\Hyperlink("Photos",  "/photos/")),
             (new Html\Hyperlink("Test",    "/test/"))
         );
+
+        if ($user = User::getCurrentUser()) {
+            $userDiv = (new Html\Div())
+                ->set("class", "user-container");
+
+            $userDiv->add($user->Username);
+
+            $nav->add($userDiv);
+        }
+
         $header->add(
             (new Html\H1())->add(
                 new Html\TextRef($this->title)

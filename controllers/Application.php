@@ -159,13 +159,58 @@ class Application {
     }
 
     /**
+     * Render the login page
+     */
+    static function Login() {
+        $doc = new Document();
+        $doc->title = "Demo login";
+
+        $form = (new Html\Form("post"));
+        $form->set("autocomplete", "off");
+        $form->add(
+            (new Html\Table())
+                ->addRow(
+                    new Html\Label("Username:", "username"),
+                    (new Html\Input("username"))
+                        ->setName("username")
+                        ->setId("username")
+                )
+                ->addRow(
+                    new Html\Label("Password:", "password"),
+                    (new Html\Input("password"))
+                        ->setName("password")
+                        ->setId("password")
+                )
+                ->addRow("", (new Html\Input("submit"))->setValue("Log in"))
+        );
+
+        $doc->main->add($form);
+
+        print($doc);
+    }
+
+    /**
+     * Handle login form submission
+     */
+    static function LoginPost() {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        if (User::login($username, $password)) {
+            // do something
+        }
+    }
+
+    /**
      * Render the registration page
      */
     static function Register() {
         $doc = new Document();
         $doc->title = "Register an account";
 
-        $form = (new Html\Form("post"))->add(
+        $form = (new Html\Form("post"));
+        $form->set("autocomplete", "off");
+        $form->add(
             (new Html\Table())
                 ->addRow(
                     new Html\Label("Username:", "username"),
@@ -185,6 +230,30 @@ class Application {
         $doc->main->add($form);
 
         print($doc);
+    }
+
+    /**
+     * Handle register form submission
+     */
+    static function RegisterPost() {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        $result = ORM::instance()
+            ->insert("users", [
+                "username" => $username,
+                "password" => Password::hash($password)
+            ])
+            ->exec();
+
+        if (!$result->isError) {
+            // no error
+            header("Location: /login/");
+            return;
+        }
+
+        // error
+        echo "Unknown error";
     }
 
 }
