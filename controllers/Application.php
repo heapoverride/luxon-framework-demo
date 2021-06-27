@@ -158,4 +158,33 @@ class Application {
         print($doc);
     }
 
+    /**
+     * Render the registration page
+     */
+    static function Register() {
+        $doc = new Document();
+        $doc->title = "Register an account";
+
+        $form = (new Html\Form("post"))->add(
+            (new Html\Table())
+                ->addRow(
+                    new Html\Label("Username:", "username"),
+                    (new Html\Input("username"))
+                        ->setName("username")
+                        ->setId("username")
+                )
+                ->addRow(
+                    new Html\Label("Password:", "password"),
+                    (new Html\Input("password"))
+                        ->setName("password")
+                        ->setId("password")
+                )
+                ->addRow("", (new Html\Input("submit"))->setValue("Register"))
+        );
+
+        $doc->main->add($form);
+
+        print($doc);
+    }
+
 }
